@@ -122,7 +122,10 @@ function logger(logMessage, data){
         console.log(logMessage.toString(), data || '');
     if (settings.rollbar.sendToRollbar)
         if (data)
-            rollbar.reportMessageWithPayloadData(logMessage.toString(), data);
+            rollbar.reportMessageWithPayloadData(logMessage.toString(), {
+                level: "info",
+                custom: data
+            });
         else
             rollbar.reportMessage(logMessage.toString());
 }
