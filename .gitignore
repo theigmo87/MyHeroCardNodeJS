@@ -42,3 +42,5 @@ data
 
 # sensitive api and account info
 config/privateSettings.js
+config/google-services.json
+config/firebaseCreds.json

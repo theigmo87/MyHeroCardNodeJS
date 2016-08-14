@@ -1,7 +1,7 @@
 var xrayBase = require('x-ray');
 var xray = xrayBase();
 
-var settings = require("./config/settings.js");
+var settings = require("../config/settings.js");
 
 var WebCrawler = {
     crawlPage: crawlPage

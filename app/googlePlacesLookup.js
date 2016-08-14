@@ -1,6 +1,6 @@
 var request = require('request');
 var async = require('async');
-var settings = require('./config/settings.js');
+var settings = require("../config/settings.js");
 
 var statuses = {
     OVER_QUERY_LIMIT: "OVER_QUERY_LIMIT",
@@ -17,6 +17,7 @@ var baseUrl = settings.googlePlacesApi.baseUrl +
 var GooglePlacesApiLookup = {
     doLookup: doPlacesLookup
 }
+
 function doPlacesLookup(lookupItems, returnCallback){
     var unfoundItems = [];
 

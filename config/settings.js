@@ -2,13 +2,15 @@ var privateSettings = require("./privateSettings.js");
 
 var settings = {
     doPlacesLU: true,
-    useExistingData: true,
+    skipCrawling: false,
     debug: true,
     
     paths: {
         scrapeResultsPath: "./data/scrapeResults.json",
+        newScrapeResults: "./data/newScrapeResults.json",
         placesLookupResultsPath: "./data/placesLookupResults.json",
-        placesNotFoundPath: "./data/placesNotFound.json"
+        placesNotFoundPath: "./data/placesNotFound.json",
+        firebaseAccountCreds: "./config/firebaseCreds.json"
     },
 
     crawler: {
@@ -40,6 +42,15 @@ var settings = {
         options: {
             exitOnUncaughtException: true,
         }
+    },
+
+    scheduler: {
+        cronJobString: "0 0 * * 3"
+    },
+
+    firebase: {
+        databaseUrl: privateSettings.firebaseUrl,
+        uid: privateSettings.firebaseUid
     }
 }
 
